@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'iOS-PT'
-  s.version          = '0.1.0'
+  s.version          = '0.1.5'
   s.summary          = 'PT框架'
 
 # This description is used to generate tags and improve search results.
@@ -30,13 +30,21 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '6.0'
 
-  s.source_files = 'iOS-PT/Classes/**/*'
+  # s.source_files = 'iOS-PT/Classes/**/*'
   
   # s.resource_bundles = {
   #   'iOS-PT' => ['iOS-PT/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'MediaPlayer', 'UIKit', 'AssetsLibrary', 'ImageIO', 'AVFoundation', 'AudioToolbox', 'MapKit', 'CoreTelephony', 'CoreTelephony', 'MessageUI', 'CoreLocation', 'CoreData', 'Security', 'CFNetwork', 'SystemConfiguration', 'OpenGLES', 'QuartzCore', 'CoreText', 'Accelerate', 'AddressBook', 'CoreMotion', 'CoreMedia', 'AdSupport', 'CoreGraphics', 'MobileCoreServices'
+  s.vendored_frameworks = 'PT.framework'
+  s.libraries = 'xml2.2', 'z', 'iconv', 'icucore', 'stdc++', 'sqlite3.0'
+  
+  s.requires_arc = true
+  s.pod_target_xcconfig = { 'HEADER_SEARCH_PATHS' => '/usr/include/libxml2' }
+  s.user_target_xcconfig = { 'HEADER_SEARCH_PATHS' => '/usr/include/libxml2' }
+
+  # s.prefix_header_contents = '#import <PT/PT.h>'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
