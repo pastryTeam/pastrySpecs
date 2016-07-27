@@ -30,13 +30,16 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '6.0'
 
-  s.source_files = 'component-iOS-unzip/Classes/**/*'
+  s.source_files = 'component-iOS-unzip/Classes/**/*.{h,m}'
+  
+  s.resources = ['component-iOS-unzip/Classes/**/*.{xib,png}']
+  
+  s.dependency 'component-iOS-base', '>= 0.1.0'
   
   # s.resource_bundles = {
-  #   'component-iOS-unzip' => ['component-iOS-unzip/Assets/*.png']
+  #   'component-iOS-unzip' => ['component-iOS-unzip/Classes/*.xib']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
